@@ -1,4 +1,4 @@
-version: '3.3'
+version: "3.3"
 
 services:
   server:
@@ -13,19 +13,9 @@ services:
       - /usr/src/app/node_modules
     ports:
       - "8080:8080"
-    depends_on:
-      - mongo
     env_file: ./server/.env
     environment:
       - NODE_ENV=development
-    networks:
-      - app-network
-  mongo:
-    image: mongo
-    volumes:
-      - data-volume:/data/db
-    ports:
-      - "27017:27017"
     networks:
       - app-network
   client:
@@ -47,11 +37,11 @@ services:
       - app-network
 
 networks:
-    app-network:
-        driver: bridge
+  app-network:
+    driver: bridge
 
 volumes:
-    data-volume:
-    node_modules:
-    web-root:
-      driver: local
+  data-volume:
+  node_modules:
+  web-root:
+    driver: local

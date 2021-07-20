@@ -1,8 +1,7 @@
 const bodyParser = require("body-parser");
-const postRouter = require("./src/routes/post.router");
+const ridesRouter = require("./src/routes/rides.router");
 const express = require("express");
 var router = express.Router();
-require("./src/database");
 const app = express();
 const PORT = 8080;
 
@@ -21,7 +20,7 @@ app.use(
 );
 app.use(bodyParser.json());
 
-app.use("/posts", postRouter);
+app.use("/rides", ridesRouter);
 
 router.use(function (req, res) {
   res.sendFile(path.join(__dirname, "../client", "build", "index.html"));

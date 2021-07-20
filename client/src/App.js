@@ -1,9 +1,12 @@
 import "./App.css";
-import { ListPost } from "./components/listPost";
+import "antd/dist/antd.css";
+import { ListRides } from "./components/listRides";
+import { Title } from "./components/title";
 function App() {
   return (
     <div className="App">
-      <ListPost />
+      <Title />
+      <ListRides />
     </div>
   );
 }
