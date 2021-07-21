@@ -25,7 +25,8 @@ const calculateCost = (ride) => {
 const getDateHour = (date) => {
   try {
     const hourRegex = /T\d\d:/;
-    const [hour] = date.match(hourRegex);
+    let [hour] = date.match(hourRegex);
+    hour = hour.replace("T", "").replace(":", "");
     return parseInt(hour);
   } catch (e) {
     console.error(e);
@@ -46,4 +47,4 @@ const getPeriodCost = (date) => {
   }
 };
 
-module.exports = calculateCost;
+module.exports = { calculateCost, getDateHour, getPeriodCost };

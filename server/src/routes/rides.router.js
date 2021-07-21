@@ -1,7 +1,7 @@
 const express = require("express");
 const ridesRouter = express.Router();
 const rides = require("../data/rides.json");
-const calculateCost = require("../functions/rides.functions");
+const { calculateCost } = require("../functions/rides.functions");
 ridesRouter.get("/", (req, res, next) => {
   try {
     const calculatedRides = rides.map((ride) => ({
