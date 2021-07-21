@@ -6,7 +6,7 @@ export const Title = () => {
   return (
     <Row gutter={10} justify={"center"}>
       <Col>
-        <h1>Paris Taxi </h1>
+        <h1>Paris Taxi</h1>
       </Col>
     </Row>
   );
